@@ -8,20 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		991CC24A2102112A00C8E965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC2492102112A00C8E965 /* AppDelegate.swift */; };
-		991CC24C2102112A00C8E965 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC24B2102112A00C8E965 /* ViewController.swift */; };
-		991CC24F2102112A00C8E965 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991CC24D2102112A00C8E965 /* Main.storyboard */; };
 		991CC2512102112E00C8E965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991CC2502102112E00C8E965 /* Assets.xcassets */; };
 		991CC2542102112E00C8E965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991CC2522102112E00C8E965 /* LaunchScreen.storyboard */; };
+		991CC25C2102117300C8E965 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25B2102117300C8E965 /* DataManager.swift */; };
+		991CC25E2102118700C8E965 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25D2102118700C8E965 /* Router.swift */; };
+		991CC260210211CB00C8E965 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25F210211CB00C8E965 /* Travel.swift */; };
+		991CC262210211DF00C8E965 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC261210211DF00C8E965 /* TravelModel.swift */; };
+		991CC267210212C900C8E965 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC265210212C900C8E965 /* TravelViewController.swift */; };
+		991CC268210212C900C8E965 /* TravelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991CC266210212C900C8E965 /* TravelViewController.xib */; };
+		991CC26A2102131700C8E965 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC2692102131700C8E965 /* BaseNavigationController.swift */; };
+		991CC26C2102135900C8E965 /* TravelNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC26B2102135900C8E965 /* TravelNavigationController.swift */; };
+		991CC27021025BD000C8E965 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC26F21025BD000C8E965 /* Protocols.swift */; };
+		9972ABE021033AE900425A60 /* TravelImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9972ABDE21033AE900425A60 /* TravelImageCell.swift */; };
+		9972ABE121033AE900425A60 /* TravelImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9972ABDF21033AE900425A60 /* TravelImageCell.xib */; };
+		9972ABE4210377F500425A60 /* TravelImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9972ABE2210377F500425A60 /* TravelImageTableViewCell.swift */; };
+		9972ABE5210377F500425A60 /* TravelImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9972ABE3210377F500425A60 /* TravelImageTableViewCell.xib */; };
+		99BAB25A21031963001F9FC1 /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAB25921031963001F9FC1 /* DarkNavigationController.swift */; };
+		99BAB26021031CCC001F9FC1 /* TravelTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAB25E21031CCC001F9FC1 /* TravelTitleCell.swift */; };
+		99BAB26121031CCC001F9FC1 /* TravelTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */; };
+		99BAB26721031D8D001F9FC1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAB26621031D8D001F9FC1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		991CC2462102112A00C8E965 /* SkylineTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkylineTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		991CC2492102112A00C8E965 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		991CC24B2102112A00C8E965 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		991CC24E2102112A00C8E965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		991CC2502102112E00C8E965 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		991CC2532102112E00C8E965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		991CC2552102112E00C8E965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		991CC25B2102117300C8E965 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		991CC25D2102118700C8E965 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		991CC25F210211CB00C8E965 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		991CC261210211DF00C8E965 /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
+		991CC265210212C900C8E965 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
+		991CC266210212C900C8E965 /* TravelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelViewController.xib; sourceTree = "<group>"; };
+		991CC2692102131700C8E965 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		991CC26B2102135900C8E965 /* TravelNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelNavigationController.swift; sourceTree = "<group>"; };
+		991CC26F21025BD000C8E965 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		9972ABDE21033AE900425A60 /* TravelImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelImageCell.swift; sourceTree = "<group>"; };
+		9972ABDF21033AE900425A60 /* TravelImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelImageCell.xib; sourceTree = "<group>"; };
+		9972ABE2210377F500425A60 /* TravelImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelImageTableViewCell.swift; sourceTree = "<group>"; };
+		9972ABE3210377F500425A60 /* TravelImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelImageTableViewCell.xib; sourceTree = "<group>"; };
+		99BAB25921031963001F9FC1 /* DarkNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
+		99BAB25E21031CCC001F9FC1 /* TravelTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTitleCell.swift; sourceTree = "<group>"; };
+		99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelTitleCell.xib; sourceTree = "<group>"; };
+		99BAB26621031D8D001F9FC1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +85,76 @@
 			isa = PBXGroup;
 			children = (
 				991CC2492102112A00C8E965 /* AppDelegate.swift */,
-				991CC24B2102112A00C8E965 /* ViewController.swift */,
-				991CC24D2102112A00C8E965 /* Main.storyboard */,
 				991CC2502102112E00C8E965 /* Assets.xcassets */,
 				991CC2522102112E00C8E965 /* LaunchScreen.storyboard */,
 				991CC2552102112E00C8E965 /* Info.plist */,
+				991CC26D2102137C00C8E965 /* Base */,
+				991CC26E2102138B00C8E965 /* Navigation */,
+				991CC2642102120F00C8E965 /* Model */,
+				99BAB26821031DA3001F9FC1 /* View */,
+				991CC263210211E700C8E965 /* ViewModel */,
+				99BAB25D21031C90001F9FC1 /* ViewController */,
+				991CC26F21025BD000C8E965 /* Protocols.swift */,
+				99BAB26621031D8D001F9FC1 /* Extensions.swift */,
 			);
 			path = SkylineTest;
+			sourceTree = "<group>";
+		};
+		991CC263210211E700C8E965 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				991CC261210211DF00C8E965 /* TravelModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		991CC2642102120F00C8E965 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				991CC25B2102117300C8E965 /* DataManager.swift */,
+				991CC25D2102118700C8E965 /* Router.swift */,
+				991CC25F210211CB00C8E965 /* Travel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		991CC26D2102137C00C8E965 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				991CC2692102131700C8E965 /* BaseNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		991CC26E2102138B00C8E965 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				99BAB25921031963001F9FC1 /* DarkNavigationController.swift */,
+				991CC26B2102135900C8E965 /* TravelNavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		99BAB25D21031C90001F9FC1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				991CC265210212C900C8E965 /* TravelViewController.swift */,
+				991CC266210212C900C8E965 /* TravelViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		99BAB26821031DA3001F9FC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99BAB25E21031CCC001F9FC1 /* TravelTitleCell.swift */,
+				99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */,
+				9972ABDE21033AE900425A60 /* TravelImageCell.swift */,
+				9972ABDF21033AE900425A60 /* TravelImageCell.xib */,
+				9972ABE2210377F500425A60 /* TravelImageTableViewCell.swift */,
+				9972ABE3210377F500425A60 /* TravelImageTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +216,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				991CC2542102112E00C8E965 /* LaunchScreen.storyboard in Resources */,
+				9972ABE5210377F500425A60 /* TravelImageTableViewCell.xib in Resources */,
+				99BAB26121031CCC001F9FC1 /* TravelTitleCell.xib in Resources */,
 				991CC2512102112E00C8E965 /* Assets.xcassets in Resources */,
-				991CC24F2102112A00C8E965 /* Main.storyboard in Resources */,
+				9972ABE121033AE900425A60 /* TravelImageCell.xib in Resources */,
+				991CC268210212C900C8E965 /* TravelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +231,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991CC24C2102112A00C8E965 /* ViewController.swift in Sources */,
+				99BAB26021031CCC001F9FC1 /* TravelTitleCell.swift in Sources */,
+				991CC26A2102131700C8E965 /* BaseNavigationController.swift in Sources */,
+				991CC25E2102118700C8E965 /* Router.swift in Sources */,
+				991CC26C2102135900C8E965 /* TravelNavigationController.swift in Sources */,
+				9972ABE021033AE900425A60 /* TravelImageCell.swift in Sources */,
+				991CC267210212C900C8E965 /* TravelViewController.swift in Sources */,
+				99BAB25A21031963001F9FC1 /* DarkNavigationController.swift in Sources */,
+				9972ABE4210377F500425A60 /* TravelImageTableViewCell.swift in Sources */,
+				991CC27021025BD000C8E965 /* Protocols.swift in Sources */,
+				991CC25C2102117300C8E965 /* DataManager.swift in Sources */,
+				991CC262210211DF00C8E965 /* TravelModel.swift in Sources */,
+				991CC260210211CB00C8E965 /* Travel.swift in Sources */,
 				991CC24A2102112A00C8E965 /* AppDelegate.swift in Sources */,
+				99BAB26721031D8D001F9FC1 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		991CC24D2102112A00C8E965 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				991CC24E2102112A00C8E965 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		991CC2522102112E00C8E965 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
