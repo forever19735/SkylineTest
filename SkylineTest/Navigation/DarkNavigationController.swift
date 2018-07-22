@@ -40,7 +40,8 @@ class DarkNavigationController: BaseNavigationController{
         navigationBar.barTintColor = UIColor.colorWithRGBValue(red: 58, green: 197, blue: 255, alpha: 1)
         navigationBar.isTranslucent = false
         navigationBar.tintColor = UIColor.white
-        
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBar.topItem?.title = "台北市熱門景點"
     }
     
 }

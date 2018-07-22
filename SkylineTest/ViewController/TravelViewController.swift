@@ -8,10 +8,11 @@
 
 import UIKit
 protocol TravelDelegate: class {
-    func send(image: String)
+    func send(image: [String])
 }
 class TravelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
     weak var delegate: TravelDelegate?
     lazy var viewModel: TravelViewModel = {
         return TravelViewModel()
@@ -22,31 +23,34 @@ class TravelViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: TravelTitleCell.self)
-        tableView.register(cellType: TravelImageTableViewCell.self)
         initVM()
     }
     
     func initVM(){
+       
         viewModel.updateLodingStatus = {[weak self]( ) in
             DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
                 if isLoading {
+                    Alert.shared.showLoadingHud(view: (self?.view)!)
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 0.0
                     })
                 } else {
+                    Alert.shared.hideLoadingHud()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 1.0
                     })
                 }
             }
         }
-        viewModel.initFetch()
+        
         viewModel.reloadTableViewClousure = { [weak self] () in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
+        viewModel.initFetch()
         
     }
     
@@ -64,15 +68,22 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellVM = viewModel.getCellViewModel(at: indexPath.row)
-        
+        self.viewModel.userPressed(at: indexPath)
+
         let cell = self.tableView.dequeueReusableCell(with: TravelTitleCell.self, for: indexPath)
         cell.setup(with: cellVM)
+        cell.travelDetail = viewModel.selectedTravel
+        
+        delegate = cell
+        delegate?.send(image: cellVM.image)
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+        
     }
     
 }

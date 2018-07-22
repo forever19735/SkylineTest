@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016E61C849BF9C1900FC88BF /* Pods_SkylineTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339DED624FC60B4EA562A1BA /* Pods_SkylineTest.framework */; };
 		991CC24A2102112A00C8E965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC2492102112A00C8E965 /* AppDelegate.swift */; };
 		991CC2512102112E00C8E965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991CC2502102112E00C8E965 /* Assets.xcassets */; };
 		991CC2542102112E00C8E965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991CC2522102112E00C8E965 /* LaunchScreen.storyboard */; };
 		991CC25C2102117300C8E965 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25B2102117300C8E965 /* DataManager.swift */; };
 		991CC25E2102118700C8E965 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25D2102118700C8E965 /* Router.swift */; };
 		991CC260210211CB00C8E965 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25F210211CB00C8E965 /* Travel.swift */; };
-		991CC262210211DF00C8E965 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC261210211DF00C8E965 /* TravelModel.swift */; };
+		991CC262210211DF00C8E965 /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC261210211DF00C8E965 /* TravelViewModel.swift */; };
 		991CC267210212C900C8E965 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC265210212C900C8E965 /* TravelViewController.swift */; };
 		991CC268210212C900C8E965 /* TravelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991CC266210212C900C8E965 /* TravelViewController.xib */; };
 		991CC26A2102131700C8E965 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC2692102131700C8E965 /* BaseNavigationController.swift */; };
@@ -21,8 +22,9 @@
 		991CC27021025BD000C8E965 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC26F21025BD000C8E965 /* Protocols.swift */; };
 		9972ABE021033AE900425A60 /* TravelImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9972ABDE21033AE900425A60 /* TravelImageCell.swift */; };
 		9972ABE121033AE900425A60 /* TravelImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9972ABDF21033AE900425A60 /* TravelImageCell.xib */; };
-		9972ABE4210377F500425A60 /* TravelImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9972ABE2210377F500425A60 /* TravelImageTableViewCell.swift */; };
-		9972ABE5210377F500425A60 /* TravelImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9972ABE3210377F500425A60 /* TravelImageTableViewCell.xib */; };
+		99AB60632103AF7C0093BEAF /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60612103AF7C0093BEAF /* TravelDetailViewController.swift */; };
+		99AB60642103AF7C0093BEAF /* TravelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AB60622103AF7C0093BEAF /* TravelDetailViewController.xib */; };
+		99AB606621044F970093BEAF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB606521044F960093BEAF /* BaseViewController.swift */; };
 		99BAB25A21031963001F9FC1 /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAB25921031963001F9FC1 /* DarkNavigationController.swift */; };
 		99BAB26021031CCC001F9FC1 /* TravelTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAB25E21031CCC001F9FC1 /* TravelTitleCell.swift */; };
 		99BAB26121031CCC001F9FC1 /* TravelTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */; };
@@ -30,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		339DED624FC60B4EA562A1BA /* Pods_SkylineTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkylineTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991CC2462102112A00C8E965 /* SkylineTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkylineTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		991CC2492102112A00C8E965 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		991CC2502102112E00C8E965 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,7 +41,7 @@
 		991CC25B2102117300C8E965 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		991CC25D2102118700C8E965 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		991CC25F210211CB00C8E965 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
-		991CC261210211DF00C8E965 /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
+		991CC261210211DF00C8E965 /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
 		991CC265210212C900C8E965 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		991CC266210212C900C8E965 /* TravelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelViewController.xib; sourceTree = "<group>"; };
 		991CC2692102131700C8E965 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -46,12 +49,15 @@
 		991CC26F21025BD000C8E965 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9972ABDE21033AE900425A60 /* TravelImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelImageCell.swift; sourceTree = "<group>"; };
 		9972ABDF21033AE900425A60 /* TravelImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelImageCell.xib; sourceTree = "<group>"; };
-		9972ABE2210377F500425A60 /* TravelImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelImageTableViewCell.swift; sourceTree = "<group>"; };
-		9972ABE3210377F500425A60 /* TravelImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelImageTableViewCell.xib; sourceTree = "<group>"; };
+		99AB60612103AF7C0093BEAF /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
+		99AB60622103AF7C0093BEAF /* TravelDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelDetailViewController.xib; sourceTree = "<group>"; };
+		99AB606521044F960093BEAF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		99BAB25921031963001F9FC1 /* DarkNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
 		99BAB25E21031CCC001F9FC1 /* TravelTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTitleCell.swift; sourceTree = "<group>"; };
 		99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelTitleCell.xib; sourceTree = "<group>"; };
 		99BAB26621031D8D001F9FC1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A92C39AC079E475E770B4207 /* Pods-SkylineTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylineTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkylineTest/Pods-SkylineTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E3C076D3235D2F7E777DF30B /* Pods-SkylineTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkylineTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkylineTest/Pods-SkylineTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016E61C849BF9C1900FC88BF /* Pods_SkylineTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07F6495479A1B13A7C4F5507 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				339DED624FC60B4EA562A1BA /* Pods_SkylineTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		168895B0EA85C17BCFF5BA30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A92C39AC079E475E770B4207 /* Pods-SkylineTest.debug.xcconfig */,
+				E3C076D3235D2F7E777DF30B /* Pods-SkylineTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		991CC23D2102112900C8E965 = {
 			isa = PBXGroup;
 			children = (
 				991CC2482102112A00C8E965 /* SkylineTest */,
 				991CC2472102112A00C8E965 /* Products */,
+				168895B0EA85C17BCFF5BA30 /* Pods */,
+				07F6495479A1B13A7C4F5507 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,7 +129,7 @@
 		991CC263210211E700C8E965 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				991CC261210211DF00C8E965 /* TravelModel.swift */,
+				991CC261210211DF00C8E965 /* TravelViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -122,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				991CC2692102131700C8E965 /* BaseNavigationController.swift */,
+				99AB606521044F960093BEAF /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -140,6 +167,8 @@
 			children = (
 				991CC265210212C900C8E965 /* TravelViewController.swift */,
 				991CC266210212C900C8E965 /* TravelViewController.xib */,
+				99AB60612103AF7C0093BEAF /* TravelDetailViewController.swift */,
+				99AB60622103AF7C0093BEAF /* TravelDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -151,8 +180,6 @@
 				99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */,
 				9972ABDE21033AE900425A60 /* TravelImageCell.swift */,
 				9972ABDF21033AE900425A60 /* TravelImageCell.xib */,
-				9972ABE2210377F500425A60 /* TravelImageTableViewCell.swift */,
-				9972ABE3210377F500425A60 /* TravelImageTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 991CC2582102112E00C8E965 /* Build configuration list for PBXNativeTarget "SkylineTest" */;
 			buildPhases = (
+				9CE5F199AC7BB781B0FD1E37 /* [CP] Check Pods Manifest.lock */,
 				991CC2422102112A00C8E965 /* Sources */,
 				991CC2432102112A00C8E965 /* Frameworks */,
 				991CC2442102112A00C8E965 /* Resources */,
+				5FB83E98B251471138AB3B6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,15 +245,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				991CC2542102112E00C8E965 /* LaunchScreen.storyboard in Resources */,
-				9972ABE5210377F500425A60 /* TravelImageTableViewCell.xib in Resources */,
 				99BAB26121031CCC001F9FC1 /* TravelTitleCell.xib in Resources */,
 				991CC2512102112E00C8E965 /* Assets.xcassets in Resources */,
+				99AB60642103AF7C0093BEAF /* TravelDetailViewController.xib in Resources */,
 				9972ABE121033AE900425A60 /* TravelImageCell.xib in Resources */,
 				991CC268210212C900C8E965 /* TravelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FB83E98B251471138AB3B6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkylineTest/Pods-SkylineTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkylineTest/Pods-SkylineTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CE5F199AC7BB781B0FD1E37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkylineTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		991CC2422102112A00C8E965 /* Sources */ = {
@@ -236,12 +304,13 @@
 				991CC25E2102118700C8E965 /* Router.swift in Sources */,
 				991CC26C2102135900C8E965 /* TravelNavigationController.swift in Sources */,
 				9972ABE021033AE900425A60 /* TravelImageCell.swift in Sources */,
+				99AB606621044F970093BEAF /* BaseViewController.swift in Sources */,
 				991CC267210212C900C8E965 /* TravelViewController.swift in Sources */,
 				99BAB25A21031963001F9FC1 /* DarkNavigationController.swift in Sources */,
-				9972ABE4210377F500425A60 /* TravelImageTableViewCell.swift in Sources */,
 				991CC27021025BD000C8E965 /* Protocols.swift in Sources */,
 				991CC25C2102117300C8E965 /* DataManager.swift in Sources */,
-				991CC262210211DF00C8E965 /* TravelModel.swift in Sources */,
+				991CC262210211DF00C8E965 /* TravelViewModel.swift in Sources */,
+				99AB60632103AF7C0093BEAF /* TravelDetailViewController.swift in Sources */,
 				991CC260210211CB00C8E965 /* Travel.swift in Sources */,
 				991CC24A2102112A00C8E965 /* AppDelegate.swift in Sources */,
 				99BAB26721031D8D001F9FC1 /* Extensions.swift in Sources */,
@@ -378,11 +447,13 @@
 		};
 		991CC2592102112E00C8E965 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A92C39AC079E475E770B4207 /* Pods-SkylineTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ANVJ832C4F;
 				INFOPLIST_FILE = SkylineTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,17 +461,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.john.SkylineTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		991CC25A2102112E00C8E965 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C076D3235D2F7E777DF30B /* Pods-SkylineTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ANVJ832C4F;
 				INFOPLIST_FILE = SkylineTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +481,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.john.SkylineTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

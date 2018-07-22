@@ -39,5 +39,6 @@ class TravelNavigationController:  DarkNavigationController {
     
     // MARK: Set Up
     private func setUp() {
+
     }
 }

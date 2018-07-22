@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class TravelTitleCell: UITableViewCell {
 
     @IBOutlet weak var titleLabl: UILabel!
@@ -16,8 +16,11 @@ class TravelTitleCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     fileprivate let flowLayout = UICollectionViewFlowLayout()
-
+    
+    var travelDetail: TravelInfos?
+    
     var str: [String] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,12 +40,6 @@ class TravelTitleCell: UITableViewCell {
     func setup(with model: TravelListViewCellModel) {
         titleLabl.text = model.title
         descriptionLabel.text = model.description
-        let lowerStr = model.image.lowercased()
-        let value = lowerStr.components(separatedBy: "jpg")
-        for i in value {
-//            print()
-            str.append(i + "jpg")
-        }
     }
     
     private func setupFlowLayout() {
@@ -50,7 +47,7 @@ class TravelTitleCell: UITableViewCell {
         flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
         flowLayout.scrollDirection = .horizontal
-        let width = CGFloat(Int((UIScreen.main.bounds.width - 40) / 3))
+        let width = CGFloat(Int(UIScreen.main.bounds.width / 2))
         flowLayout.itemSize = CGSize(width: width, height: collectionView.frame.size.height)
     }
     
@@ -63,19 +60,31 @@ extension TravelTitleCell: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return str.count
+        return str.count - 1
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(with: TravelImageCell.self, for: indexPath)
-        for i in str {
-             cell.imageView.downloadedFrom(link: i)
-        }
-       
 
-        
+        let urls = URL(string: str[indexPath.item])
+        cell.imageView.kf.setImage(with: urls, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+       
         return  cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detail = TravelDetailViewController()
+        let nav = UIApplication.getTopMostViewController()
+        nav?.navigationController?.pushViewController(detail, animated: true)
+//        print(travelDetail)
+        
+    }
+}
+extension TravelTitleCell: TravelDelegate{
+    func send(image: [String]) {
+        str = image
+        collectionView.reloadData()
     }
 }
 

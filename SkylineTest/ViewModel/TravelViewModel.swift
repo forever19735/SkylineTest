@@ -11,10 +11,12 @@ import Foundation
 struct TravelListViewCellModel {
     let title: String
     let description: String
-    let image: String
+    let image: [String]
 }
 
-
+protocol ViewPressedDelegate {
+    func userPressed(at index: IndexPath)
+}
 
 class TravelViewModel{
     
@@ -24,7 +26,7 @@ class TravelViewModel{
         }
     }
     
-    private var travelInfo: [TravelInfos] = [TravelInfos]()
+    var travelInfo: [TravelInfos] = [TravelInfos]()
     
     var numberOfCells: Int{
         return cellViewModels.count
@@ -42,7 +44,7 @@ class TravelViewModel{
         }
     }
     
-    var selectedStation: TravelInfos?
+    var selectedTravel: TravelInfos?
     
     var reloadTableViewClousure: (()->())?
     var updateLodingStatus: (()->())?
@@ -65,7 +67,17 @@ class TravelViewModel{
     }
     
     func createCellViewModel(travel: TravelInfos) -> TravelListViewCellModel {
-        return TravelListViewCellModel(title: travel.stitle, description: travel.xbody, image: travel.file)
+        return TravelListViewCellModel(title: travel.stitle, description: travel.xbody, image: translateImage(imageUrl: travel.file))
+    }
+    
+    func translateImage(imageUrl: String) -> [String]{
+        var strArray: [String] = []
+        let lowerStr = imageUrl.lowercased()
+        let value = lowerStr.components(separatedBy: "jpg")
+        for i in value {
+            strArray.append(i + "jpg")
+        }
+        return strArray 
     }
     
     private func processFetchedTravel(travels: [TravelInfos]){
@@ -77,4 +89,10 @@ class TravelViewModel{
         self.cellViewModels = valueArray
     }
     
+}
+extension TravelViewModel: ViewPressedDelegate {
+    func userPressed(at indexPath: IndexPath){
+        let travel = self.travelInfo[indexPath.row]
+        self.selectedTravel = travel
+    }
 }
