@@ -40,7 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWH-HH-U3u">
-                        <rect key="frame" x="10" y="55.5" width="328" height="82"/>
+                        <rect key="frame" x="10" y="55.5" width="328" height="62"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -53,7 +53,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CS8-ZL-e2o">
-                        <rect key="frame" x="0.0" y="137.5" width="348" height="150"/>
+                        <rect key="frame" x="0.0" y="127.5" width="348" height="150"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="150" id="mvo-Lk-P5q"/>
@@ -69,9 +69,9 @@
                 <constraints>
                     <constraint firstItem="dqg-kD-8PP" firstAttribute="top" secondItem="nKU-Cl-CJd" secondAttribute="bottom" id="8IO-hZ-DLF"/>
                     <constraint firstItem="nKU-Cl-CJd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="94C-8j-isq"/>
-                    <constraint firstItem="CS8-ZL-e2o" firstAttribute="top" secondItem="kWH-HH-U3u" secondAttribute="bottom" id="Ffj-9h-QAr"/>
+                    <constraint firstItem="CS8-ZL-e2o" firstAttribute="top" secondItem="kWH-HH-U3u" secondAttribute="bottom" constant="10" id="Ffj-9h-QAr"/>
                     <constraint firstAttribute="trailing" secondItem="CS8-ZL-e2o" secondAttribute="trailing" id="Fo9-md-WwA"/>
-                    <constraint firstAttribute="bottom" secondItem="CS8-ZL-e2o" secondAttribute="bottom" id="L39-Zb-Zk1"/>
+                    <constraint firstAttribute="bottom" secondItem="CS8-ZL-e2o" secondAttribute="bottom" constant="10" id="L39-Zb-Zk1"/>
                     <constraint firstItem="kWH-HH-U3u" firstAttribute="top" secondItem="dqg-kD-8PP" secondAttribute="bottom" constant="20" id="OBY-fb-YLT"/>
                     <constraint firstItem="CS8-ZL-e2o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Xk5-DM-TxG"/>
                     <constraint firstItem="kWH-HH-U3u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dBg-Td-NUG"/>

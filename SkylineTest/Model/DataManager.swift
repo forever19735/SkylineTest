@@ -7,6 +7,12 @@
 //
 
 import Foundation
+
+enum APIError: String, Error {
+    case noNetwork = "No Network"
+    case serverOverload = "Server is overloaded"
+}
+
 class DataManager {
     static var shared = DataManager()
 }
@@ -14,7 +20,7 @@ class DataManager {
 extension DataManager {
     typealias requestTravelSuccess = (Travel) -> Void
     
-    typealias requestTravelFailure = (Error) -> Void
+    typealias requestTravelFailure = (APIError) -> Void
     
     func requestTravel(_ success: @escaping requestTravelSuccess, failure: requestTravelFailure? = nil
         ){
@@ -30,7 +36,7 @@ extension DataManager {
                     let value = try decoder.decode(Travel.self, from: data)
                     success(value)
                 }catch{
-                    failure?(error)
+                    failure?(error as? APIError ?? APIError.noNetwork)
                 }
             }
         }

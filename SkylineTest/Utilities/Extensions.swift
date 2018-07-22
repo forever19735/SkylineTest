@@ -86,7 +86,11 @@ extension UIImageView {
         downloadedFrom(url: url, contentMode: mode)
     }
 }
-
+extension String {
+    func toDouble() -> Double? {
+        return NumberFormatter().number(from: self)?.doubleValue
+    }
+}
 
 extension UIApplication {
     class func getTopMostViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
@@ -104,3 +108,4 @@ extension UIApplication {
         return base
     }
 }
+

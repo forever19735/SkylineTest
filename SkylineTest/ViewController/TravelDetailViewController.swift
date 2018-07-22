@@ -7,31 +7,65 @@
 //
 
 import UIKit
+import MapKit
 
-class TravelDetailViewController: UIViewController {
-    lazy var viewModel: TravelViewModel = {
-        return TravelViewModel()
-    }()
+class TravelDetailViewController: UIViewController, TravelProtocol {
+    
+    var travelDetail: TravelInfos?
+    
+    let locationManager = CLLocationManager()
+   
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        requestLocationAccess()
+        setUp()
+        self.navigationItem.title = travelDetail?.stitle
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        locationManager.stopUpdatingLocation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func requestLocationAccess() {
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return
+            
+        case .denied, .restricted:
+            print("location access denied")
+            
+        default:
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
-    */
+    
+    private func setUp() {
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
+        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            let coordinate = CLLocationCoordinate2DMake(travelDetail?.latitude.toDouble() ?? 0.0, travelDetail?.longitude.toDouble() ?? 0.0)
+            
+            // 創建大頭釘(annotation)
+            let travelAnnotation = MKPointAnnotation()
+            travelAnnotation.coordinate = coordinate
+            travelAnnotation.title = travelDetail?.stitle
+            travelAnnotation.subtitle = "靠近\(travelDetail?.MRT ?? "")捷運站"
+
+            let scaleRegion = MKCoordinateRegion(center: coordinate, span:  MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+            mapView.setRegion(scaleRegion, animated: true)
+            mapView.addAnnotation(travelAnnotation)
+ 
+        }
+        else {
+            print("System can't track regions")
+        }
+    }
 }

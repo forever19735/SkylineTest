@@ -40,7 +40,7 @@ class TravelViewModel{
     
     var alertMessage: String? {
         didSet {
-            self.showAlertCloure?()
+            self.showAlertClosure?()
         }
     }
     
@@ -48,7 +48,7 @@ class TravelViewModel{
     
     var reloadTableViewClousure: (()->())?
     var updateLodingStatus: (()->())?
-    var showAlertCloure: (()->())?
+    var showAlertClosure: (()->())?
     
     func initFetch() {
       
@@ -57,20 +57,20 @@ class TravelViewModel{
             self.isLoading = false
             self.processFetchedTravel(travels: data.result.results)
         }) { (error) in
-            self.alertMessage = error.localizedDescription
+            self.alertMessage = error.rawValue
             print(error.localizedDescription)
         }
     }
     
-    func getCellViewModel(at indexPath: Int) -> TravelListViewCellModel {
-        return cellViewModels[indexPath]
+    func getCellViewModel(at indexPath: IndexPath) -> TravelListViewCellModel {
+        return cellViewModels[indexPath.row]
     }
     
     func createCellViewModel(travel: TravelInfos) -> TravelListViewCellModel {
         return TravelListViewCellModel(title: travel.stitle, description: travel.xbody, image: translateImage(imageUrl: travel.file))
     }
     
-    func translateImage(imageUrl: String) -> [String]{
+    private func translateImage(imageUrl: String) -> [String] {
         var strArray: [String] = []
         let lowerStr = imageUrl.lowercased()
         let value = lowerStr.components(separatedBy: "jpg")
@@ -80,7 +80,7 @@ class TravelViewModel{
         return strArray 
     }
     
-    private func processFetchedTravel(travels: [TravelInfos]){
+    private func processFetchedTravel(travels: [TravelInfos]) {
         self.travelInfo = travels
         var valueArray = [TravelListViewCellModel]()
         for travel in travels {

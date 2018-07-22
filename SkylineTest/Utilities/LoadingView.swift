@@ -8,19 +8,19 @@
 
 import UIKit
 
-class Alert {
-    static let shared = Alert()
+class LoadingView {
+    static let shared = LoadingView()
     private var hud = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     @discardableResult
-    func showLoadingHud(view: UIView = UIApplication.shared.keyWindow!) -> UIActivityIndicatorView{
+    func show(view: UIView = UIApplication.shared.keyWindow!) -> UIActivityIndicatorView{
         hud.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
         view.addSubview(hud)
         hud.startAnimating()
         return hud
     }
     
-    func hideLoadingHud(view: UIView = UIApplication.shared.keyWindow!, animated: Bool = true) {
+    func hide(view: UIView = UIApplication.shared.keyWindow!, animated: Bool = true) {
        hud.stopAnimating()
     }
 }

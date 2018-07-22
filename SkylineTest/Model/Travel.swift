@@ -28,7 +28,9 @@ struct TravelInfos: Codable {
     let xbody: String
 //    let address: String
     let file: String
-//    let info: String
-//    let MRT: String
+    let info: String?
+    let MRT: String?
+    let longitude: String
+    let latitude: String
 }
 

@@ -7,13 +7,10 @@
 //
 
 import UIKit
-protocol TravelDelegate: class {
-    func send(image: [String])
-}
+
 class TravelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    weak var delegate: TravelDelegate?
     lazy var viewModel: TravelViewModel = {
         return TravelViewModel()
     }()
@@ -27,17 +24,23 @@ class TravelViewController: UIViewController {
     }
     
     func initVM(){
-       
+        viewModel.showAlertClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    self?.showAlert( message )
+                }
+            }
+        }
         viewModel.updateLodingStatus = {[weak self]( ) in
             DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
                 if isLoading {
-                    Alert.shared.showLoadingHud(view: (self?.view)!)
+                    LoadingView.shared.show(view: (self?.view)!)
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 0.0
                     })
                 } else {
-                    Alert.shared.hideLoadingHud()
+                    LoadingView.shared.hide()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 1.0
                     })
@@ -50,8 +53,15 @@ class TravelViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
+        
         viewModel.initFetch()
         
+    }
+    
+    func showAlert( _ message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -67,23 +77,17 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellVM = viewModel.getCellViewModel(at: indexPath.row)
-        self.viewModel.userPressed(at: indexPath)
-
+        let cellVM = viewModel.getCellViewModel(at: indexPath)
         let cell = self.tableView.dequeueReusableCell(with: TravelTitleCell.self, for: indexPath)
         cell.setup(with: cellVM)
+        
+        viewModel.userPressed(at: indexPath)
         cell.travelDetail = viewModel.selectedTravel
-        
-        delegate = cell
-        delegate?.send(image: cellVM.image)
-        
         
         return cell
     }
-    
+   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
-        
     }
-    
 }

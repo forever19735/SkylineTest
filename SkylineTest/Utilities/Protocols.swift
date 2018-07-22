@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  Protocols.swift
 //  SkylineTest
 //
 //  Created by apple on 2018/7/22.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class BaseViewController: UIViewController{
-    
+protocol TravelProtocol {
+    var travelDetail: TravelInfos?{ get }
 }
