@@ -20,17 +20,22 @@ class TravelViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: TravelTitleCell.self)
+        
         initVM()
     }
-    
+   
     func initVM(){
+        
         viewModel.showAlertClosure = { [weak self] () in
             DispatchQueue.main.async {
                 if let message = self?.viewModel.alertMessage {
                     self?.showAlert( message )
+                    LoadingView.shared.hide()
+
                 }
             }
         }
+        
         viewModel.updateLodingStatus = {[weak self]( ) in
             DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
@@ -59,8 +64,8 @@ class TravelViewController: UIViewController {
     }
     
     func showAlert( _ message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

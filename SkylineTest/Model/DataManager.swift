@@ -7,10 +7,9 @@
 //
 
 import Foundation
-
+import Alamofire
 enum APIError: String, Error {
-    case noNetwork = "No Network"
-    case serverOverload = "Server is overloaded"
+    case noNetwork = "網路連線異常"
 }
 
 class DataManager {
@@ -23,24 +22,25 @@ extension DataManager {
     typealias requestTravelFailure = (APIError) -> Void
     
     func requestTravel(_ success: @escaping requestTravelSuccess, failure: requestTravelFailure? = nil
-        ){
-        let baseUrl = URL(string: "http://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=36847f3f-deff-4183-a5bb-800737591de5")
-        
-        let request = URLRequest(url: baseUrl!)
-        
-        let session = URLSession.shared
-        let decoder = JSONDecoder()
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let data = data {
-                do{
-                    let value = try decoder.decode(Travel.self, from: data)
-                    success(value)
-                }catch{
-                    failure?(error as? APIError ?? APIError.noNetwork)
+        ) -> Request{
+        let endPoint = Router.getTravel()
+        return Alamofire.request(endPoint).validate().responseJSON(completionHandler: { (response) in
+            switch response.result {
+            case .success(_):
+                if let data = response.data{
+                    let decoder = JSONDecoder()
+                    
+                    do {
+                        let value = try decoder.decode(Travel.self, from: data)
+                        success(value)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
+            case .failure(let error):
+                failure?(error as? APIError ?? APIError.noNetwork)
             }
-        }
-        task.resume()
+        })
         
     }
 }

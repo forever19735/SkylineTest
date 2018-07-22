@@ -8,15 +8,17 @@
 
 import UIKit
 import Kingfisher
+
 class TravelImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
       
     }
     
-    func setUp(urls: URL?){
+    func setUp(urls: URL?) {
          imageView.kf.setImage(with: urls, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
     }
 

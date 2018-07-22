@@ -20,7 +20,8 @@ class LoadingView {
         return hud
     }
     
-    func hide(view: UIView = UIApplication.shared.keyWindow!, animated: Bool = true) {
-       hud.stopAnimating()
+    func hide() {
+        hud.stopAnimating()
+        hud.removeFromSuperview()
     }
 }
