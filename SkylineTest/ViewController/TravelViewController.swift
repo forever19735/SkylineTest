@@ -10,7 +10,7 @@ import UIKit
 
 class TravelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+
     lazy var viewModel: TravelViewModel = {
         return TravelViewModel()
     }()
@@ -20,11 +20,11 @@ class TravelViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellType: TravelTitleCell.self)
-        
         initVM()
+
     }
    
-    func initVM(){
+    func initVM() {
         
         viewModel.showAlertClosure = { [weak self] () in
             DispatchQueue.main.async {
@@ -35,7 +35,7 @@ class TravelViewController: UIViewController {
                 }
             }
         }
-        
+
         viewModel.updateLodingStatus = {[weak self]( ) in
             DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
@@ -52,13 +52,13 @@ class TravelViewController: UIViewController {
                 }
             }
         }
-        
+
         viewModel.reloadTableViewClousure = { [weak self] () in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
-        
+
         viewModel.initFetch()
         
     }
@@ -72,11 +72,11 @@ class TravelViewController: UIViewController {
 }
 
 extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCells
     }
@@ -88,10 +88,11 @@ extension TravelViewController: UITableViewDataSource, UITableViewDelegate {
         
         viewModel.userPressed(at: indexPath)
         cell.travelDetail = viewModel.selectedTravel
-        
+     
         return cell
     }
-   
+  
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }

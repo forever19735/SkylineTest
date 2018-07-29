@@ -9,9 +9,9 @@
 import UIKit
 import MapKit
 
-class TravelDetailViewController: UIViewController, TravelProtocol {
+class TravelDetailViewController: UIViewController{
     
-    var travelDetail: TravelInfos?
+    var travelDetail: Travel?
     
     let locationManager = CLLocationManager()
    

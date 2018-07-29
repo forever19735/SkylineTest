@@ -11,8 +11,8 @@
 		991CC24A2102112A00C8E965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC2492102112A00C8E965 /* AppDelegate.swift */; };
 		991CC2512102112E00C8E965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991CC2502102112E00C8E965 /* Assets.xcassets */; };
 		991CC2542102112E00C8E965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991CC2522102112E00C8E965 /* LaunchScreen.storyboard */; };
-		991CC25C2102117300C8E965 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25B2102117300C8E965 /* DataManager.swift */; };
-		991CC25E2102118700C8E965 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25D2102118700C8E965 /* Router.swift */; };
+		991CC25C2102117300C8E965 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25B2102117300C8E965 /* NetworkManager.swift */; };
+		991CC25E2102118700C8E965 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25D2102118700C8E965 /* NetworkRouter.swift */; };
 		991CC260210211CB00C8E965 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC25F210211CB00C8E965 /* Travel.swift */; };
 		991CC262210211DF00C8E965 /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC261210211DF00C8E965 /* TravelViewModel.swift */; };
 		991CC267210212C900C8E965 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991CC265210212C900C8E965 /* TravelViewController.swift */; };
@@ -24,7 +24,18 @@
 		9972ABE121033AE900425A60 /* TravelImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9972ABDF21033AE900425A60 /* TravelImageCell.xib */; };
 		99AB60632103AF7C0093BEAF /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60612103AF7C0093BEAF /* TravelDetailViewController.swift */; };
 		99AB60642103AF7C0093BEAF /* TravelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AB60622103AF7C0093BEAF /* TravelDetailViewController.xib */; };
-		99AB60712104AF7F0093BEAF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60702104AF7F0093BEAF /* Protocols.swift */; };
+		99AB60752104BEE90093BEAF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60742104BEE90093BEAF /* EmptyView.swift */; };
+		99AB60782104BF850093BEAF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60762104BF850093BEAF /* BaseViewController.swift */; };
+		99AB60792104BF850093BEAF /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AB60772104BF850093BEAF /* BaseViewController.xib */; };
+		99AB608721061BA50093BEAF /* TravelInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB608621061BA50093BEAF /* TravelInfoViewModel.swift */; };
+		99AB60AF210D8D720093BEAF /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60AE210D8D720093BEAF /* EndPointType.swift */; };
+		99AB60B1210DA5010093BEAF /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60B0210DA5010093BEAF /* URLParameterEncoder.swift */; };
+		99AB60B3210DA66A0093BEAF /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60B2210DA66A0093BEAF /* JSONParameterEncoder.swift */; };
+		99AB60B7210DA8820093BEAF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60B6210DA8820093BEAF /* HTTPMethod.swift */; };
+		99AB60B9210DA8A10093BEAF /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60B8210DA8A10093BEAF /* HTTPTask.swift */; };
+		99AB60BB210DA8DF0093BEAF /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60BA210DA8DF0093BEAF /* ParameterEncoding.swift */; };
+		99AB60BE210DA9B00093BEAF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60BD210DA9B00093BEAF /* Router.swift */; };
+		99AB60C0210DB0AE0093BEAF /* TarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB60BF210DB0AE0093BEAF /* TarvelApi.swift */; };
 		99BAB25A21031963001F9FC1 /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAB25921031963001F9FC1 /* DarkNavigationController.swift */; };
 		99BAB26021031CCC001F9FC1 /* TravelTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAB25E21031CCC001F9FC1 /* TravelTitleCell.swift */; };
 		99BAB26121031CCC001F9FC1 /* TravelTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */; };
@@ -38,8 +49,8 @@
 		991CC2502102112E00C8E965 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		991CC2532102112E00C8E965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		991CC2552102112E00C8E965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		991CC25B2102117300C8E965 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		991CC25D2102118700C8E965 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		991CC25B2102117300C8E965 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		991CC25D2102118700C8E965 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		991CC25F210211CB00C8E965 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		991CC261210211DF00C8E965 /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
 		991CC265210212C900C8E965 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +62,18 @@
 		9972ABDF21033AE900425A60 /* TravelImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelImageCell.xib; sourceTree = "<group>"; };
 		99AB60612103AF7C0093BEAF /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
 		99AB60622103AF7C0093BEAF /* TravelDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelDetailViewController.xib; sourceTree = "<group>"; };
-		99AB60702104AF7F0093BEAF /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		99AB60742104BEE90093BEAF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		99AB60762104BF850093BEAF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		99AB60772104BF850093BEAF /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		99AB608621061BA50093BEAF /* TravelInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoViewModel.swift; sourceTree = "<group>"; };
+		99AB60AE210D8D720093BEAF /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		99AB60B0210DA5010093BEAF /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		99AB60B2210DA66A0093BEAF /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		99AB60B6210DA8820093BEAF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		99AB60B8210DA8A10093BEAF /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		99AB60BA210DA8DF0093BEAF /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		99AB60BD210DA9B00093BEAF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		99AB60BF210DB0AE0093BEAF /* TarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarvelApi.swift; sourceTree = "<group>"; };
 		99BAB25921031963001F9FC1 /* DarkNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
 		99BAB25E21031CCC001F9FC1 /* TravelTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTitleCell.swift; sourceTree = "<group>"; };
 		99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelTitleCell.xib; sourceTree = "<group>"; };
@@ -116,6 +138,7 @@
 				991CC2552102112E00C8E965 /* Info.plist */,
 				991CC26D2102137C00C8E965 /* Base */,
 				991CC26E2102138B00C8E965 /* Navigation */,
+				99AB60B4210DA8070093BEAF /* Networking */,
 				991CC2642102120F00C8E965 /* Model */,
 				99BAB26821031DA3001F9FC1 /* View */,
 				991CC263210211E700C8E965 /* ViewModel */,
@@ -129,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				991CC261210211DF00C8E965 /* TravelViewModel.swift */,
+				99AB608621061BA50093BEAF /* TravelInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -136,8 +160,6 @@
 		991CC2642102120F00C8E965 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				991CC25B2102117300C8E965 /* DataManager.swift */,
-				991CC25D2102118700C8E965 /* Router.swift */,
 				991CC25F210211CB00C8E965 /* Travel.swift */,
 			);
 			path = Model;
@@ -147,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				991CC2692102131700C8E965 /* BaseNavigationController.swift */,
+				99AB60762104BF850093BEAF /* BaseViewController.swift */,
+				99AB60772104BF850093BEAF /* BaseViewController.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -165,9 +189,57 @@
 			children = (
 				991CC26F21025BD000C8E965 /* LoadingView.swift */,
 				99BAB26621031D8D001F9FC1 /* Extensions.swift */,
-				99AB60702104AF7F0093BEAF /* Protocols.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		99AB60B4210DA8070093BEAF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				99AB60C2210DE44E0093BEAF /* Manager */,
+				99AB60B5210DA8330093BEAF /* Service */,
+				99AB60BC210DA95C0093BEAF /* Encoding */,
+				99AB60C1210DE4300093BEAF /* EndPoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		99AB60B5210DA8330093BEAF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				99AB60AE210D8D720093BEAF /* EndPointType.swift */,
+				99AB60B6210DA8820093BEAF /* HTTPMethod.swift */,
+				99AB60B8210DA8A10093BEAF /* HTTPTask.swift */,
+				991CC25D2102118700C8E965 /* NetworkRouter.swift */,
+				99AB60BD210DA9B00093BEAF /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		99AB60BC210DA95C0093BEAF /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				99AB60B0210DA5010093BEAF /* URLParameterEncoder.swift */,
+				99AB60B2210DA66A0093BEAF /* JSONParameterEncoder.swift */,
+				99AB60BA210DA8DF0093BEAF /* ParameterEncoding.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		99AB60C1210DE4300093BEAF /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				99AB60BF210DB0AE0093BEAF /* TarvelApi.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		99AB60C2210DE44E0093BEAF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				991CC25B2102117300C8E965 /* NetworkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		99BAB25D21031C90001F9FC1 /* ViewController */ = {
@@ -188,6 +260,7 @@
 				99BAB25F21031CCC001F9FC1 /* TravelTitleCell.xib */,
 				9972ABDE21033AE900425A60 /* TravelImageCell.swift */,
 				9972ABDF21033AE900425A60 /* TravelImageCell.xib */,
+				99AB60742104BEE90093BEAF /* EmptyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +330,7 @@
 				991CC2512102112E00C8E965 /* Assets.xcassets in Resources */,
 				99AB60642103AF7C0093BEAF /* TravelDetailViewController.xib in Resources */,
 				9972ABE121033AE900425A60 /* TravelImageCell.xib in Resources */,
+				99AB60792104BF850093BEAF /* BaseViewController.xib in Resources */,
 				991CC268210212C900C8E965 /* TravelViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,12 +345,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SkylineTest/Pods-SkylineTest-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,20 +381,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99AB60712104AF7F0093BEAF /* Protocols.swift in Sources */,
 				99BAB26021031CCC001F9FC1 /* TravelTitleCell.swift in Sources */,
+				99AB60AF210D8D720093BEAF /* EndPointType.swift in Sources */,
 				991CC26A2102131700C8E965 /* BaseNavigationController.swift in Sources */,
-				991CC25E2102118700C8E965 /* Router.swift in Sources */,
+				991CC25E2102118700C8E965 /* NetworkRouter.swift in Sources */,
 				991CC26C2102135900C8E965 /* TravelNavigationController.swift in Sources */,
+				99AB60B9210DA8A10093BEAF /* HTTPTask.swift in Sources */,
 				9972ABE021033AE900425A60 /* TravelImageCell.swift in Sources */,
+				99AB60BE210DA9B00093BEAF /* Router.swift in Sources */,
+				99AB60C0210DB0AE0093BEAF /* TarvelApi.swift in Sources */,
 				991CC267210212C900C8E965 /* TravelViewController.swift in Sources */,
+				99AB60B1210DA5010093BEAF /* URLParameterEncoder.swift in Sources */,
+				99AB60782104BF850093BEAF /* BaseViewController.swift in Sources */,
+				99AB60752104BEE90093BEAF /* EmptyView.swift in Sources */,
 				99BAB25A21031963001F9FC1 /* DarkNavigationController.swift in Sources */,
+				99AB60B3210DA66A0093BEAF /* JSONParameterEncoder.swift in Sources */,
+				99AB608721061BA50093BEAF /* TravelInfoViewModel.swift in Sources */,
 				991CC27021025BD000C8E965 /* LoadingView.swift in Sources */,
-				991CC25C2102117300C8E965 /* DataManager.swift in Sources */,
+				991CC25C2102117300C8E965 /* NetworkManager.swift in Sources */,
+				99AB60B7210DA8820093BEAF /* HTTPMethod.swift in Sources */,
 				991CC262210211DF00C8E965 /* TravelViewModel.swift in Sources */,
 				99AB60632103AF7C0093BEAF /* TravelDetailViewController.swift in Sources */,
 				991CC260210211CB00C8E965 /* Travel.swift in Sources */,
 				991CC24A2102112A00C8E965 /* AppDelegate.swift in Sources */,
+				99AB60BB210DA8DF0093BEAF /* ParameterEncoding.swift in Sources */,
 				99BAB26721031D8D001F9FC1 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,9 +10,9 @@ import UIKit
 import Kingfisher
 
 
-class TravelTitleCell: UITableViewCell, TravelProtocol {
+class TravelTitleCell: UITableViewCell {
    
-    var travelDetail: TravelInfos?
+    var travelDetail: Travel?
 
     @IBOutlet weak var titleLabl: UILabel!
     

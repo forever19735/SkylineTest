@@ -4,7 +4,7 @@
 //
 //  Created by apple on 2018/7/20.
 //  Copyright © 2018年 Johnny. All rights reserved.
-//
+
 
 import Foundation
 
@@ -19,14 +19,20 @@ protocol ViewPressedDelegate {
 }
 
 class TravelViewModel{
-    
+//    weak var loadingStatusDelegate: ViewModelLoadingStatusDelegate?
+
     private var cellViewModels: [TravelListViewCellModel] = [TravelListViewCellModel](){
         didSet{
             self.reloadTableViewClousure?()
+            if cellViewModels.isEmpty {
+                DispatchQueue.main.async {
+//                    self.loadingStatusDelegate?.showEmptyView(with: nil)
+                }
+            }
         }
     }
     
-    var travelInfo: [TravelInfos] = [TravelInfos]()
+    var travelInfo: [Travel] = [Travel]()
     
     var numberOfCells: Int{
         return cellViewModels.count
@@ -41,32 +47,38 @@ class TravelViewModel{
     var alertMessage: String? {
         didSet {
             self.showAlertClosure?()
+          
         }
     }
     
-    var selectedTravel: TravelInfos?
+    var selectedTravel: Travel?
     
     var reloadTableViewClousure: (()->())?
     var updateLodingStatus: (()->())?
     var showAlertClosure: (()->())?
     
     func initFetch() {
-      
         self.isLoading = true
-        _ = DataManager.shared.requestTravel({ (data) in
+
+        NetworkManager.shared.getTravels { (travels, error) in
             self.isLoading = false
-            self.processFetchedTravel(travels: data.result.results)
-        }) { (error) in
-            self.alertMessage = error.rawValue
-            print(error.localizedDescription)
+
+            if let error = error {
+                self.alertMessage = error
+            }
+            
+            if let travels = travels {
+                self.processFetchedTravel(travels: travels)
+            }
         }
+
     }
     
     func getCellViewModel(at indexPath: IndexPath) -> TravelListViewCellModel {
         return cellViewModels[indexPath.row]
     }
     
-    func createCellViewModel(travel: TravelInfos) -> TravelListViewCellModel {
+    func createCellViewModel(travel: Travel) -> TravelListViewCellModel {
         return TravelListViewCellModel(title: travel.stitle, description: travel.xbody, image: translateImage(imageUrl: travel.file))
     }
     
@@ -77,10 +89,10 @@ class TravelViewModel{
         for i in value {
             strArray.append(i + "jpg")
         }
-        return strArray 
+        return strArray
     }
     
-    private func processFetchedTravel(travels: [TravelInfos]) {
+    private func processFetchedTravel(travels: [Travel]) {
         self.travelInfo = travels
         var valueArray = [TravelListViewCellModel]()
         for travel in travels {
@@ -90,6 +102,7 @@ class TravelViewModel{
     }
     
 }
+
 extension TravelViewModel: ViewPressedDelegate {
     func userPressed(at indexPath: IndexPath){
         let travel = self.travelInfo[indexPath.row]

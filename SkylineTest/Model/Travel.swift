@@ -7,30 +7,43 @@
 //
 
 import Foundation
-struct Travel: Codable{
-    let result: Result
+
+struct TravelApiResponse: Decodable {
+    let result: TravelResponse
 }
 
-struct Result: Codable {
+struct TravelResponse: Decodable {
+    
     let limit, offset, count: Int
     
     let sort: String
-    
-    let results: [TravelInfos]
+   
+    let results: [Travel]
 }
 
-struct TravelInfos: Codable {
+struct Travel: Decodable {
+    
     let _id: String
+    
     let RowNumber: String
+    
     let CAT1: String
+    
     let CAT2: String
+    
     let stitle: String
+    
     let xbody: String
-//    let address: String
+    
     let file: String
+    
     let info: String?
+    
     let MRT: String?
+    
     let longitude: String
+    
     let latitude: String
+    
 }
 
